@@ -1,0 +1,25 @@
+default:
+    extensions:
+        Goez\BehatLaravelExtension:
+        Laracasts\Behat:
+            env_path: .env.behat
+        Behat\MinkExtension:
+            base_url: "http://localhost:8000"
+            default_session: laravel
+            laravel: ~
+            selenium2:
+                browser: chrome
+        emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+            name: html
+            renderer: Twig
+            file_name: index
+            print_args: true
+            print_outp: true
+            loop_break: true
+    suites:
+        bookshelf:
+            paths:    [ %paths.base%/features/bookshelf ]
+            contexts: [ BookshelfContext ]
+        membership:
+            paths:    [ %paths.base%/features/membership ]
+            contexts: [ MembershipContext ]

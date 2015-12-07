@@ -1,0 +1,28 @@
+#build_settings:
+#  mysql:
+#    host: "localhost"
+#    user: "testing"
+#    pass: "testing"
+setup:
+#  mysql:
+#    - "CREATE DATABASE IF NOT EXISTS `testing` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+  composer:
+    action: install
+    prefer_dist: true
+  shell:
+    - "cp .env.testing .env"
+    - "php artisan key:generate"
+    - "touch storage/acceptance.sqlite"
+    - "touch storage/functional.sqlite"
+test:
+  php_parallel_lint:
+    directory: "app"
+  behat: ~
+  php_unit: ~
+  shell:
+    command: "sh < build.sh"
+complete:
+  slack_notify:
+    room: '#web-ci'
+    webhook_url: 'https://hooks.slack.com/services/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'
+

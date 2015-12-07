@@ -1,0 +1,17 @@
+/vendor
+/node_modules
+/workbench
+/public/bower_components
+/public/css
+/public/js
+/public/fonts
+/public/build
+/public/images
+/.sass-cache
+/.bundle
+Homestead.yaml
+.env
+.DS_Store
+Thumbs.db
+Gemfile.lock
+storage/*.sqlite
