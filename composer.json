@@ -52,13 +52,17 @@
         "setup": [
             "php -r \"copy('.env.example', '.env');\"",
             "COMPOSER=`which composer` && ${COMPOSER} install",
-            "php artisan key:generate"
+            "php artisan key:generate",
+            "NPM=`which npm` && ${NPM} prune && ${NPM} install  --no-bin-links",
+            "BOWER=\"./node_modules/bower/bin/bower\" && ${BOWER} prune && ${BOWER} install"
         ],
         "serve": [
             "./node_modules/gulp/bin/gulp.js"
         ],
         "build": [
-            
+            "NPM=`which npm` && ${NPM} prune && ${NPM} install",
+            "BOWER=\"./node_modules/bower/bin/bower\" && ${BOWER} prune && ${BOWER} install",
+            "./node_modules/gulp/bin/gulp.js --production"
         ]
     },
     "config": {

@@ -13,8 +13,6 @@ install:
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source
   - travis_retry composer setup
-  - sudo npm install --no-bin-links
-  - bower install
 
 matrix:
   allow_failures:
