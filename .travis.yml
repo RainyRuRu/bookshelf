@@ -12,7 +12,9 @@ sudo: required
 install:
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source
+  - travis_retry composer setup
   - sudo apt-get update
+  - sudo apt-get install npm
   - sudo apt-get install nodejs
   - sudo npm install npm -g
   - sudo npm install --no-bin-links
