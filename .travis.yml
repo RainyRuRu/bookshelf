@@ -9,11 +9,12 @@ php:
 
 sudo: required
 
+before_install:
+  - npm install -g npm@'>=1.4.3'
+
 install:
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source
-  - node -version
-  - npm -version
   - travis_retry composer setup
 
 matrix:
