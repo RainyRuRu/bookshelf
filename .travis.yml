@@ -10,16 +10,16 @@ php:
 sudo: required
 
 before_install:
-  - npm install -g npm@'>=1.4.3'
   - sudo apt-get update
   - sudo apt-get install nodejs
+  - npm install -g npm@'>=1.4.3'
 
 install:
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source
   - travis_retry composer setup
   - travis_retry npm install --no-bin-links
-  - bower install
+  - travis_retry bower install
 
 matrix:
   allow_failures:
