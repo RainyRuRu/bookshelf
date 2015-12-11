@@ -12,6 +12,8 @@ sudo: required
 install:
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source
+  - node -version
+  - npm -version
   - travis_retry composer setup
 
 matrix:
