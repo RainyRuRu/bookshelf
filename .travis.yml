@@ -19,8 +19,7 @@ install:
   - travis_retry composer install --no-interaction --prefer-source
   - travis_retry composer setup
   - travis_retry npm install --no-bin-links
-  - travis_retry bower install
-
+  
 matrix:
   allow_failures:
     - php: hhvm
