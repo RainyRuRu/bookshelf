@@ -60,7 +60,7 @@ class BookshelfContext extends LaravelContext implements Context, SnippetAccepti
     }
 
     /**
-     * @Given 書架上現有書籍
+     * @Given 書架上現有書籍:
      */
     public function onShelfBooks(TableNode $table)
     {
@@ -110,7 +110,7 @@ class BookshelfContext extends LaravelContext implements Context, SnippetAccepti
     }
 
     /**
-     * @Then 顯示書籍清單、出借狀況
+     * @Then 顯示書籍清單、出借狀況:
      */
     public function booksList(TableNode $table)
     {
