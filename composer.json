@@ -52,7 +52,7 @@
         "setup": [
             "php -r \"copy('.env.example', '.env');\"",
             "COMPOSER=`which composer` && ${COMPOSER} install",
-            "php artisan key:generate",
+            "php artisan key:generate"
         ],
         "serve": [
             "./node_modules/gulp/bin/gulp.js"
